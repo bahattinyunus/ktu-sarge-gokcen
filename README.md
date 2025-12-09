@@ -9,6 +9,7 @@
   [![](https://img.shields.io/badge/Category-High_Altitude_Rocket-blue?style=for-the-badge)](https://teknofest.org/tr/)
   [![](https://img.shields.io/badge/Status-Development-yellow?style=for-the-badge)](https://github.com/)
   [![](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+  [![CI Status](https://github.com/bahattinyunus/teknofest-rocket-2026/actions/workflows/ci.yml/badge.svg?style=for-the-badge)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
 
   <br>
 
@@ -70,6 +71,24 @@ Bu zorlu süreçte bize destek olan kurumlar, geleceğin mühendislerinin yetiş
 | Ana Sponsor | Platin Sponsor | Altın Sponsor |
 | :---: | :---: | :---: |
 | _Logo Gelecek_ | _Logo Gelecek_ | _Logo Gelecek_ |
+
+
+
+---
+
+## 🛠️ Geliştirici Kılavuzu
+
+Projeyi yerel ortamınızda çalıştırmak ve geliştirmek için aşağıdaki komutları kullanabilirsiniz (`Makefile` veya `make.bat`):
+
+- **Kurulum:** `make install` (Bağımlılıkları yükler)
+- **Test:** `make test` (Birim testlerini çalıştırır)
+- **Format:** `make format` (Kodları düzenler: Black/Isort)
+- **Simülasyon:** 
+    - `make run-flight` (Uçuş simülasyonu)
+    - `make run-telemetry` (Telemetri simülasyonu)
+    - `make run-ground` (Yer istasyonu alıcısı)
+
+Detaylı katılım yönergeleri için lütfen [CONTRIBUTING.md](CONTRIBUTING.md) ve [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) dosyalarını inceleyin.
 
 ---
 
