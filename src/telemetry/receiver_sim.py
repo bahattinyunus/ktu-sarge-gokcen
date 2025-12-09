@@ -3,8 +3,9 @@ import json
 import time
 
 def main():
-    UDP_IP = "127.0.0.1"
-    UDP_PORT = 5005
+    import os
+    UDP_IP = os.getenv("UDP_IP", "127.0.0.1")
+    UDP_PORT = int(os.getenv("UDP_PORT", 5005))
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((UDP_IP, UDP_PORT))
@@ -16,7 +17,7 @@ def main():
 
     # Open CSV file for logging
     with open("telemetry_log.csv", "w", encoding="utf-8") as log_file:
-        log_file.write("packet_id,timestamp,altitude,velocity,status\n")
+        log_file.write("packet_id,timestamp,altitude,velocity,pos_x,pos_y,status\n")
 
         try:
             while True:
@@ -28,11 +29,14 @@ def main():
                     print(f"{telemetry.get('packet_id', 0):<6} "
                           f"{telemetry.get('altitude', 0):<10.1f} "
                           f"{telemetry.get('velocity', 0):<10.1f} "
+                          f"X:{telemetry.get('pos_x', 0):<6.1f} "
+                          f"Y:{telemetry.get('pos_y', 0):<6.1f} "
                           f"{telemetry.get('status', 'N/A'):<10}")
                     
                     # Write to CSV
                     log_file.write(f"{telemetry.get('packet_id')},{telemetry.get('timestamp')},"
                                    f"{telemetry.get('altitude')},{telemetry.get('velocity')},"
+                                   f"{telemetry.get('pos_x', 0)},{telemetry.get('pos_y', 0)},"
                                    f"{telemetry.get('status')}\n")
                     log_file.flush() # Ensure data is written immediately
 

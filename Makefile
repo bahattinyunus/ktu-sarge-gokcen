@@ -1,4 +1,4 @@
-.PHONY: install test format run-flight run-telemetry run-ground analyze
+.PHONY: install test format run-flight run-telemetry run-ground analyze run-dashboard docker-up docker-down
 
 install:
 	pip install -r requirements.txt
@@ -21,3 +21,12 @@ run-ground:
 
 analyze:
 	python src/analysis/plot_data.py
+
+run-dashboard:
+	streamlit run src/dashboard/dashboard.py
+
+docker-up:
+	docker-compose up --build
+
+docker-down:
+	docker-compose down

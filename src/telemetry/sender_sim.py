@@ -2,49 +2,84 @@ import json
 import random
 import socket
 import time
-
-
-def generate_packet(packet_id):
-    """Generates a dummy telemetry packet."""
-    return {
-        "team_id": 12345,
-        "packet_id": packet_id,
-        "timestamp": time.time(),
-        "pressure": 101325 - (packet_id * 10) + random.uniform(-5, 5),
-        "altitude": packet_id * 5.5 + random.uniform(-0.5, 0.5),
-        "velocity": packet_id * 1.2,
-        "gps_lat": 41.0 + (packet_id * 0.0001),
-        "gps_long": 29.0 + (packet_id * 0.0001),
-        "status": "ASCENT" if packet_id < 100 else "DESCENT",
-    }
-
+import os
 
 def main():
     print("📡 Telemetry Simulator Started...")
     print("Sending data to UDP port 5005 (Localhost)")
 
-    UDP_IP = "127.0.0.1"
-    UDP_PORT = 5005
+    UDP_IP = os.getenv("TARGET_IP", "127.0.0.1")
+    UDP_PORT = int(os.getenv("TARGET_PORT", 5005))
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-    packet_count = 0
-    try:
-        while packet_count < 20:  # Send 20 packets then stop for demo
-            data = generate_packet(packet_count)
-            message = json.dumps(data).encode("utf-8")
+    start_time = time.time()
+    
+    # 3D Position State
+    x, y, z = 0.0, 0.0, 0.0
+    vx, vy, vz = 0.0, 0.0, 0.0
 
-            sock.sendto(message, (UDP_IP, UDP_PORT))
-            print(f"Tx: {message}")
+    print("🚀 Taking off...")
 
-            time.sleep(0.5)
-            packet_count += 1
+    # Simulation Loop
+    for i in range(1000): 
+        current_time = time.time() - start_time
+        
+        # Simple Physics Model
+        if current_time < 5.0: # Burn phase (0-5s)
+            az = 20.0 - 9.81
+            ax = random.uniform(-0.5, 0.5) # Random wind buffeting
+            ay = random.uniform(-0.5, 0.5)
+            status = "ASCENT_BURN"
+        elif vz > 0: # Coast phase
+            az = -9.81 - (0.01 * vz**2) # Gravity + Drag
+            ax = random.uniform(-0.2, 0.2)
+            ay = random.uniform(-0.2, 0.2)
+            status = "COASTING"
+        else: # Descent phase
+            az = -9.81 + (0.05 * vz**2) # Parachute drag
+            ax = random.uniform(-2.0, 2.0) # High drift under parachute
+            ay = random.uniform(-2.0, 2.0)
+            status = "DESCENT"
 
-        print("✅ Transmission Complete.")
+        # Update Velocity (Integration)
+        dt = 0.5
+        vz += az * dt
+        vx += ax * dt
+        vy += ay * dt
 
-    except KeyboardInterrupt:
-        print("Interrupted.")
+        # Update Position (Integration)
+        z += vz * dt
+        x += vx * dt
+        y += vy * dt
 
+        # Ground collision
+        if z < 0:
+            z = 0
+            status = "LANDED"
+
+        packet = {
+            "team_id": 12345,
+            "packet_id": i,
+            "timestamp": round(current_time, 2),
+            "altitude": round(z, 2),
+            "velocity": round(vz, 2),
+            "pos_x": round(x, 2),
+            "pos_y": round(y, 2),
+            "status": status
+        }
+        
+        message = json.dumps(packet).encode('utf-8')
+        sock.sendto(message, (UDP_IP, UDP_PORT))
+        print(f"Tx: {message}")
+        
+        if status == "LANDED":
+            print("🛬 Rocket Landed.")
+            break
+
+        time.sleep(0.5)
+
+    print("✅ Transmission Complete.")
 
 if __name__ == "__main__":
     main()

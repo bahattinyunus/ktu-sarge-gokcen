@@ -87,6 +87,10 @@ Projeyi yerel ortamınızda çalıştırmak ve geliştirmek için aşağıdaki k
     - `make run-flight` (Uçuş simülasyonu)
     - `make run-telemetry` (Telemetri simülasyonu)
     - `make run-ground` (Yer istasyonu alıcısı)
+    - `make run-dashboard` (Görev Kontrol Paneli 🖥️)
+- **Containerization (Docker):**
+    - `make docker-up` (Tüm sistemi başlatır)
+    - `make docker-down` (Sistemi durdurur)
 
 Detaylı katılım yönergeleri için lütfen [CONTRIBUTING.md](CONTRIBUTING.md) ve [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) dosyalarını inceleyin.
 

@@ -23,6 +23,7 @@ if "%1" == "run-flight" (
     goto :eof
 )
 
+if "%1" == "run-telemetry" (
     python src\telemetry\sender_sim.py
     goto :eof
 )
@@ -37,6 +38,21 @@ if "%1" == "analyze" (
     goto :eof
 )
 
+if "%1" == "run-dashboard" (
+    streamlit run src\dashboard\dashboard.py
+    goto :eof
+)
+
+if "%1" == "docker-up" (
+    docker-compose up --build
+    goto :eof
+)
+
+if "%1" == "docker-down" (
+    docker-compose down
+    goto :eof
+)
+
 :help
 echo Usage: make.bat [command]
 echo Commands:
@@ -47,4 +63,7 @@ echo   run-flight    Run flight simulation
 echo   run-telemetry Run telemetry simulation
 echo   run-ground    Run ground station receiver
 echo   analyze       Analyze flight data (generate plot)
+echo   run-dashboard Run mission control dashboard (Streamlit)
+echo   docker-up     Run entire system in Docker
+echo   docker-down   Stop Docker containers
 goto :eof

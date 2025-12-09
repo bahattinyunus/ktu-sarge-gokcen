@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # 1. Ground Station Receiver (Listens for data)
+  ground-station:
+    build: .
+    container_name: rocket-ground-station
+    command: python src/telemetry/receiver_sim.py
+    environment:
+      - UDP_IP=0.0.0.0
+      - UDP_PORT=5005
+    ports:
+      - "5005:5005/udp"
+    volumes:
+      - .:/app
+    networks:
+      - rocket-network
+
+  # 2. Mission Control Dashboard (Visualizes data)
+  dashboard:
+    build: .
+    container_name: rocket-dashboard
+    command: streamlit run src/dashboard/dashboard.py
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      - ground-station
+    networks:
+      - rocket-network
+
+  # 3. Telemetry Sender (Simulates the rocket)
+  # Run this manually or uncomment to auto-start simulation
+  telemetry-sender:
+    build: .
+    container_name: rocket-sender
+    command: python src/telemetry/sender_sim.py
+    environment:
+      - TARGET_IP=ground-station
+      - TARGET_PORT=5005
+    depends_on:
+      - ground-station
+    networks:
+      - rocket-network
+    restart: "no" # Run once and exit
+
+networks:
+  rocket-network:
+    driver: bridge
