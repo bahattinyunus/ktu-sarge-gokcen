@@ -38,6 +38,11 @@ if "%1" == "analyze" (
     goto :eof
 )
 
+if "%1" == "report" (
+    python src\analysis\generate_report.py
+    goto :eof
+)
+
 if "%1" == "run-dashboard" (
     streamlit run src\dashboard\dashboard.py
     goto :eof

@@ -22,6 +22,9 @@ run-ground:
 analyze:
 	python src/analysis/plot_data.py
 
+report:
+	python src/analysis/generate_report.py
+
 run-dashboard:
 	streamlit run src/dashboard/dashboard.py
 

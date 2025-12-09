@@ -232,10 +232,11 @@ Sistem ortam değişkenleri (Environment Variables) ile konfigüre edilebilir. V
 
 ## 🖼️ Galeri
 
-| Uçuş Analiz Grafiği | Görev Kontrol Ekranı |
-| :---: | :---: |
-| ![Flight Analysis](flight_analysis.png) | *Dashboard ekran görüntüsü buraya eklenecektir* |
-| *Matplotlib ile oluşturulan uçuş sonrası analiz* | *Canlı veri akışı ve 3D yörünge* |
+<div align="center">
+  <h3>📊 Uçuş Sonrası Analiz</h3>
+  <img src="flight_analysis.png" alt="Flight Analysis Chart" width="800"/>
+  <p><i>Matplotlib ile oluşturulan telemetri verisi: İrtifa ve Hız profili.</i></p>
+</div>
 
 ---
 
