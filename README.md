@@ -282,7 +282,7 @@ Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için `LICENSE` dosyasın
   
   <br>
 
-  <p>📬 İletişim: <a href="mailto:iletisim@ktu.edu.tr">iletisim@ktu.edu.tr</a></p>
+
   <p>© 2026 Karadeniz Teknik Üniversitesi Roket Takımı</p>
-  <i>"İstikbal Göklerdedir" - K. Atatürk</i>
+
 </div>
