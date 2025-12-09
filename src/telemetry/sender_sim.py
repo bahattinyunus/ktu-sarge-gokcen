@@ -3,83 +3,132 @@ import random
 import socket
 import time
 import os
+import threading
+
+# Uplink Config
+CMD_PORT = int(os.getenv("ROCKET_CMD_PORT", 5006))
+
+# Simulation State
+current_status = "IDLE"
+mission_start_time = 0
+reset_flag = False
+
+def command_listener():
+    """Listens for UDP commands on a separate thread."""
+    global current_status, mission_start_time, reset_flag
+    
+    cmd_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    cmd_sock.bind(("0.0.0.0", CMD_PORT))
+    print(f"👂 Listening for commands on port {CMD_PORT}...")
+
+    while True:
+        data, addr = cmd_sock.recvfrom(1024)
+        cmd = data.decode('utf-8').strip().upper()
+        print(f"📩 Command Received: {cmd}")
+
+        if cmd == "ARM":
+            current_status = "READY"
+        elif cmd == "LAUNCH":
+            if current_status == "READY":
+                current_status = "ASCENT_BURN"
+                mission_start_time = time.time()
+        elif cmd == "DEPLOY_CHUTE":
+            current_status = "DESCENT"
+        elif cmd == "RESET":
+            current_status = "IDLE"
+            reset_flag = True
 
 def main():
+    global current_status, mission_start_time, reset_flag
+    
     print("📡 Telemetry Simulator Started...")
-    print("Sending data to UDP port 5005 (Localhost)")
+    
+    # Start Listener
+    t = threading.Thread(target=command_listener, daemon=True)
+    t.start()
 
     UDP_IP = os.getenv("TARGET_IP", "127.0.0.1")
     UDP_PORT = int(os.getenv("TARGET_PORT", 5005))
+    
+    # Tuz Golu Launch Site
+    LAUNCH_LAT = 38.8200
+    LAUNCH_LON = 33.3300
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-    start_time = time.time()
     
-    # 3D Position State
+    # Physics State
     x, y, z = 0.0, 0.0, 0.0
     vx, vy, vz = 0.0, 0.0, 0.0
 
-    print("🚀 Taking off...")
+    print("⏳ Waiting for commands...")
 
-    # Simulation Loop
-    for i in range(1000): 
-        current_time = time.time() - start_time
-        
-        # Simple Physics Model
-        if current_time < 5.0: # Burn phase (0-5s)
-            az = 20.0 - 9.81
-            ax = random.uniform(-0.5, 0.5) # Random wind buffeting
-            ay = random.uniform(-0.5, 0.5)
-            status = "ASCENT_BURN"
-        elif vz > 0: # Coast phase
-            az = -9.81 - (0.01 * vz**2) # Gravity + Drag
-            ax = random.uniform(-0.2, 0.2)
-            ay = random.uniform(-0.2, 0.2)
-            status = "COASTING"
-        else: # Descent phase
-            az = -9.81 + (0.05 * vz**2) # Parachute drag
-            ax = random.uniform(-2.0, 2.0) # High drift under parachute
-            ay = random.uniform(-2.0, 2.0)
-            status = "DESCENT"
+    while True:
+        if reset_flag:
+            x, y, z = 0.0, 0.0, 0.0
+            vx, vy, vz = 0.0, 0.0, 0.0
+            reset_flag = False
+            print("🔄 Simulation Reset.")
 
-        # Update Velocity (Integration)
-        dt = 0.5
-        vz += az * dt
-        vx += ax * dt
-        vy += ay * dt
+        # Time Management
+        if current_status in ["IDLE", "READY"]:
+            # Just send heartbeat
+            dt = 0.5
+        else:
+            dt = 0.5
+            mission_time = time.time() - mission_start_time
+            
+            # Physics Calculation based on State
+            if current_status == "ASCENT_BURN":
+                az = 25.0 - 9.81
+                if mission_time > 5.0:
+                    current_status = "COASTING"
+            elif current_status == "COASTING":
+                az = -9.81 - (0.01 * vz**2)
+                if vz < 0:
+                     # Auto-deploy at apogee (normally), but let's wait for gravity or command
+                     pass
+            elif current_status == "DESCENT":
+                 az = -9.81 + (0.05 * vz**2)
+                 if vz > -5: az = -9.81 # Terminal velocity clamp roughly
 
-        # Update Position (Integration)
-        z += vz * dt
-        x += vx * dt
-        y += vy * dt
+            if current_status in ["ASCENT_BURN", "COASTING", "DESCENT"]:
+                # Integration
+                vz += az * dt
+                z += vz * dt
+                
+                # Drift
+                x += random.uniform(-1, 1)
+                y += random.uniform(-1, 1)
 
-        # Ground collision
-        if z < 0:
-            z = 0
-            status = "LANDED"
+            # Ground Check
+            if z < 0:
+                z = 0
+                if current_status not in ["IDLE", "READY"]:
+                    current_status = "LANDED"
 
+        # Coordinates
+        lat = LAUNCH_LAT + (y / 111000.0)
+        lon = LAUNCH_LON + (x / (111000.0 * 0.78))
+
+        # Packet Generation
         packet = {
             "team_id": 12345,
-            "packet_id": i,
-            "timestamp": round(current_time, 2),
+            "packet_id": 0, # Simplified
+            "timestamp": time.time(),
             "altitude": round(z, 2),
             "velocity": round(vz, 2),
             "pos_x": round(x, 2),
             "pos_y": round(y, 2),
-            "status": status
+            "gps_lat": lat,
+            "gps_long": lon,
+            "status": current_status
         }
         
-        message = json.dumps(packet).encode('utf-8')
-        sock.sendto(message, (UDP_IP, UDP_PORT))
-        print(f"Tx: {message}")
+        msg = json.dumps(packet).encode('utf-8')
+        sock.sendto(msg, (UDP_IP, UDP_PORT))
+        print(f"Tx ({current_status}): {msg[:50]}...")
         
-        if status == "LANDED":
-            print("🛬 Rocket Landed.")
-            break
-
-        time.sleep(0.5)
-
-    print("✅ Transmission Complete.")
+        time.sleep(dt)
 
 if __name__ == "__main__":
     main()

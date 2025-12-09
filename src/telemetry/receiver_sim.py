@@ -17,7 +17,7 @@ def main():
 
     # Open CSV file for logging
     with open("telemetry_log.csv", "w", encoding="utf-8") as log_file:
-        log_file.write("packet_id,timestamp,altitude,velocity,pos_x,pos_y,status\n")
+        log_file.write("packet_id,timestamp,altitude,velocity,pos_x,pos_y,gps_lat,gps_long,status\n")
 
         try:
             while True:
@@ -37,6 +37,7 @@ def main():
                     log_file.write(f"{telemetry.get('packet_id')},{telemetry.get('timestamp')},"
                                    f"{telemetry.get('altitude')},{telemetry.get('velocity')},"
                                    f"{telemetry.get('pos_x', 0)},{telemetry.get('pos_y', 0)},"
+                                   f"{telemetry.get('gps_lat', 0)},{telemetry.get('gps_long', 0)},"
                                    f"{telemetry.get('status')}\n")
                     log_file.flush() # Ensure data is written immediately
 
