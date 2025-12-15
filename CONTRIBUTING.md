@@ -1,31 +1,14 @@
-# Contributing to Teknofest Rocket Team
+# Katkıda Bulunma Rehberi
 
-Thank you for your interest in contributing to our project! 🚀
+Bu proje, Teknofest 2026 Roket Yarışması için bir **dokümantasyon ve planlama** deposudur. Kod yüklemesi yapılmaz.
 
-## Getting Started
+## Nasıl Katkı Sağlanır?
+1.  **Issue Açın:** Yapacağınız görevi veya bulduğunuz hatayı "Issues" sekmesinden bildirin.
+2.  **Branch Yasak:** Doğrudan `main` branch'ine commit atmayın. `feature/rapor-adi` şeklinde dal (branch) açın.
+3.  **Markdown Kullanın:** Tüm rapor ve notlar `.md` formatında olmalıdır. Word/Excel dosyaları sadece `assets/` veya `docs/raw` altına yüklenmelidir.
+4.  **Resimler:** Raporlara eklediğiniz resimleri `assets/photos/` klasörüne koyun ve oradan link verin.
 
-1.  **Fork** the repository.
-2.  **Clone** your fork locally.
-3.  **Create a branch** for your feature or bugfix (`git checkout -b feature/amazing-feature`).
-
-## Development Standards
-
-- **Code Style:** Follow PEP 8 for Python code.
-- **Documentation:** Ensure all new functions and classes have docstrings.
-- **Testing:** Test your code locally before pushing.
-
-## Pull Request Process
-
-1.  Ensure your code builds and runs without errors.
-2.  Update the `README.md` if you change any functionality.
-3.  Submit a Pull Request targeting the `main` branch.
-4.  Describe your changes in detail using the provided template.
-
-## Reporting Bugs
-
-Please use the GitHub Issues tab to report bugs. Include:
-- Description of the bug.
-- Steps to reproduce.
-- Expected vs. actual behavior.
-
-Happy coding!
+## Pull Request (PR) Süreci
+- PR açarken şablonu doldurun.
+- En az bir takım arkadaşınızdan "Review" isteyin.
+- Yazım hatalarını kontrol edin.

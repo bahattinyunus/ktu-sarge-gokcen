@@ -23,6 +23,31 @@ Bu repository, **KTÜ Gökçen Roket Takımı**'nın 2026 Teknofest Yarışması
 
 ---
 
+## 🚀 Yarışma Hakkında (Teknofest Roket Kategorisi)
+
+**T3 Vakfı** ve **Roketsan** öncülüğünde düzenlenen bu yarışma, öğrencilerin uzay teknolojileri alanında yetkinlik kazanmasını hedefler.
+
+### 🏆 Kategoriler
+Takımımız **Yüksek İrtifa (High Altitude)** kategorisinde yarışmaktadır.
+*   **Orta İrtifa:** 5.000 feet (yaklaşık 1.500m) hedef irtifa.
+*   **Yüksek İrtifa:** 10.000 feet (yaklaşık 3.000m) hedef irtifa - *Bizim Hedefimiz*
+*   **Zorlu Görev:** 10.000 feet + Değişken Faydalı Yük görevi.
+
+### 📝 Değerlendirme Süreci
+Yarışma süreci 4 temel rapordan oluşur. Her aşama elemeli sistemdir:
+1.  **KTR (Kavramsal Tasarım Raporu):** Projenin yapılabilirliği, takım yapısı ve literatür taraması puanlanır.
+2.  **ÖTR (Ön Tasarım Raporu):** Matematiksel analizler, CFD simülasyonları ve detaylı CAD çizimleri istenir.
+3.  **KTR (Kritik Tasarım Raporu):** Üretim planı, entegrasyon adımları ve nihai uçuş simülasyonları sunulur.
+4.  **AHR (Atış Hazırlık Raporu):** Montajı tamamlanmış roketin test sonuçları ve uçuşa elverişlilik kanıtları sunulur.
+
+### 🎯 Puanlama Kriterleri
+*   **Raporlar:** %40 (Mühendislik hesapları ve dokümantasyon kalitesi).
+*   **Atış ve Kurtarma:** %40 (Roketin sağlıklı şekilde tepe noktasına ulaşması ve paraşütlerin açılması).
+*   **Faydalı Yük:** %10 (Görevin başarıyla icra edilmesi).
+*   **Özgünlük:** %10 (Yerli tasarım ve inovatif çözümler).
+
+---
+
 ## 📅 Çalışma Takvimi
 Takım yönetim planına gör ana kilometre taşları:
 
