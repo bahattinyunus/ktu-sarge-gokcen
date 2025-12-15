@@ -39,12 +39,24 @@ Takım yönetim planına gör ana kilometre taşları:
 
 ## 📂 Dokümantasyon Yapısı
 
-Tüm teknik ve idari belgeler `docs/` klasörü altındadır:
+Tüm teknik ve idari belgeler `docs/` klasörü altındadır. Teknofest standartlarına uygun olarak kategorize edilmiştir:
 
-*   **[Tasarım Notları (Design Notes)](docs/design_notes/)**: Alt sistem tasarımları ve hesaplamalar.
-*   **[İç Hesaplamalar](docs/internal/calculations_rationale.md)**: Sensör gürültü analizleri, fizik formülleri ve kabuller.
-*   **[Terminoloji](docs/internal/variable_nomenclature.md)**: Projede kullanılan semboller ve değişkenler.
-*   **[Geçmiş Raporlar](geçmis_raporlar/)**: Önceki yıllara ait referans raporlar.
+### 📄 Rapor Şablonları
+Yarışma isterlerine uygun taslaklar:
+*   [Kavramsal Tasarım Raporu (KTR) Taslağı](docs/templates/KTR_Sablonu.md)
+*   [Ön Tasarım Raporu (ÖTR) Taslağı](docs/templates/OTR_Sablonu.md)
+
+### 🛠️ Alt Sistemler (Workspaces)
+Her ekibin teknik notları ve tasarımları:
+*   [Aerodinamik & Yapısal](docs/subsystems/aerodynamics.md)
+*   [Aviyonik & Yazılım](docs/subsystems/avionics.md)
+*   *Diğer alt sistemler `docs/subsystems/` altında oluşturulacaktır.*
+
+### 📊 Yönetim ve Arşiv
+*   [Bütçe ve Finans](docs/management/budget.md)
+*   [Tasarım Notları (Ham)](docs/design_notes/)
+*   [Geçmiş Raporlar](geçmis_raporlar/)
+*   [İç Hesaplamalar](docs/internal/calculations_rationale.md)
 
 ---
 
