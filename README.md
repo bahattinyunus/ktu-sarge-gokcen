@@ -57,26 +57,26 @@ Sistem, birbirinden izole edilmiş ancak ağ üzerinden haberleşen üç ana mik
 ```mermaid
 graph TD
     subgraph "Uzay Segmenti (Roket)"
-        Sender[🚀 Sender Simülatör]
-        Physics[🧮 Fizik Motoru]
-        UplinkRx[👂 Uplink Alıcısı]
+        Sender["🚀 Sender Simülatör"]
+        Physics["🧮 Fizik Motoru"]
+        UplinkRx["👂 Uplink Alıcısı"]
         
-        Sender -->|Sensör Verisi| Physics
-        Physics -->|Durum Güncellemesi| Sender
-        UplinkRx -->|Komut: ARM/LAUNCH| Sender
+        Sender -->|"Sensör Verisi"| Physics
+        Physics -->|"Durum Güncellemesi"| Sender
+        UplinkRx -->|"Komut: ARM/LAUNCH"| Sender
     end
 
     subgraph "Yer Segmenti (Ground)"
-        Receiver[📡 Yer İstasyonu Alıcısı]
-        Database[(💾 CSV Log Veritabanı)]
-        Dashboard[🖥️ Görev Kontrol Paneli]
-        Commander[🎮 Telekomut Modülü]
+        Receiver["📡 Yer İstasyonu Alıcısı"]
+        Database[("💾 CSV Log Veritabanı")]
+        Dashboard["🖥️ Görev Kontrol Paneli"]
+        Commander["🎮 Telekomut Modülü"]
 
-        Sender -->|UDP: 5005 (Telemetri)| Receiver
-        Receiver -->|Veri Yazma| Database
-        Database <-->|Veri Okuma (Refresh)| Dashboard
-        Dashboard -->|Tetikleme| Commander
-        Commander -->|UDP: 5006 (Komut)| UplinkRx
+        Sender -->|"UDP: 5005 (Telemetri)"| Receiver
+        Receiver -->|"Veri Yazma"| Database
+        Database <-->|"Veri Okuma (Refresh)"| Dashboard
+        Dashboard -->|"Tetikleme"| Commander
+        Commander -->|"UDP: 5006 (Komut)"| UplinkRx
     end
 
     style Sender fill:#ff9999,stroke:#333
