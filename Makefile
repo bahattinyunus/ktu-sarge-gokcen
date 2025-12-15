@@ -10,6 +10,10 @@ format:
 	black .
 	isort .
 
+lint:
+	flake8 .
+	pylint src tables tests
+
 run-flight:
 	python src/simulation/rocket_flight.py
 

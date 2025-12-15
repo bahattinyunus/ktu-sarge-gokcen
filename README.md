@@ -37,8 +37,9 @@
 8. [Konfigürasyon](#-konfigürasyon)
 9. [Galeri](#-galeri)
 10. [Sıkça Sorulan Sorular (SSS)](/-sıkça-sorulan-sorular-sss)
-11. [Katkıda Bulunma](#-katkıda-bulunma-contributing)
-12. [Lisans ve İletişim](#-lisans-ve-i̇letişim)
+11. [Dokümantasyon](#-dokümantasyon)
+12. [Katkıda Bulunma](#-katkıda-bulunma-contributing)
+13. [Lisans ve İletişim](#-lisans-ve-i̇letişim)
 
 ---
 
@@ -102,9 +103,10 @@ Bu repository, standart bir öğrenci projesinin çok ötesinde özellikler bar�
 
 ## 📦 Detaylı Modül Açıklamaları
 
-### 4.1 Roket Simülasyonu (`sender_sim.py`)
+### 4.1 Roket Simülasyonu (`sender_sim.py` & `physics.py`)
 Bu modül, roketin uçuş bilgisayarını taklit eder.
-- **Multithreading:** Ana döngü fizik motorunu çalıştırırken, arka planda çalışan bir `Thread` yer istasyonundan gelen komutları dinler (Port 5006).
+- **Fizik Motoru (`src/simulation/physics.py`):** Fizik hesaplamaları (kinematik, sürüklenme, iniş kontrolü) ana döngüden ayrıştırılarak modüler hale getirilmiştir. Bu sayede farklı roket profilleri kolayca test edilebilir.
+- **Multithreading:** Ana döngü fizik motorunu güncellerken, arka planda çalışan bir `Thread` yer istasyonundan gelen komutları dinler (Port 5006).
 - **Durum Makinesi (State Machine):** Roket şu durumlardan birinde olabilir:
   - `IDLE`: Bekleme modu.
   - `READY`: ARM edildi, fırlatmaya hazır.
@@ -200,9 +202,15 @@ make install
 *Bu komut sanal ortam oluşturmaz, global veya aktif venv'e yükler.*
 
 ### 3. Çalıştırma
-Sistemi parça parça veya bütün olarak çalıştırabilirsiniz.
+Sistemi tek tıkla veya parça parça çalıştırabilirsiniz.
 
-**Tüm Sistemi Başlatmak İçin (Önerilen):**
+#### Hızlı Başlangıç (Windows) ⚡
+En kolay yöntem `run_all.bat` scriptini kullanmaktır. Bu script Yer İstasyonu, Dashboard ve Roket Simülatörünü otomatik olarak ayrı pencerelerde açar.
+```bash
+run_all.bat
+```
+
+#### Manuel Çalıştırma (Linux/Mac & Gelişmiş)
 Ayrı terminallerde sırasıyla:
 1. `make run-ground` (Önce alıcıyı başlatın)
 2. `make run-dashboard` (Arayüzü açın)
@@ -250,6 +258,14 @@ C: `receiver_sim.py` dosyasını modifiye ederek UDP yerine `pyserial` kütüpha
 
 **S: Neden UTC zaman damgası kullanılmıyor?**
 C: Simülasyon basitliği için `mission_time` (T+ saniye) kullanılmıştır. Gerçek uçuşta GPS zamanı kullanılacaktır.
+
+---
+
+## 📚 Dokümantasyon
+
+Proje içi teknik notlar ve hesaplamalar `docs/` altında toplanmıştır:
+*   [Hesaplamalar ve Mantıksal Gerekçeler (Rationale)](docs/internal/calculations_rationale.md): İvme eşikleri, sensör gürültü hesapları.
+*   [Değişken İsimlendirme (Nomenclature)](docs/internal/variable_nomenclature.md): Projede kullanılan `h`, `pa`, `a_z` gibi kısaltmaların anlamları.
 
 ---
 

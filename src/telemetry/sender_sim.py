@@ -4,6 +4,10 @@ import socket
 import time
 import os
 import threading
+import sys
+
+# Ensure we can import from src (if running as script)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
 # Uplink Config
 CMD_PORT = int(os.getenv("ROCKET_CMD_PORT", 5006))
@@ -56,16 +60,15 @@ def main():
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     
-    # Physics State
-    x, y, z = 0.0, 0.0, 0.0
-    vx, vy, vz = 0.0, 0.0, 0.0
+    # Physics Engine
+    from src.simulation.physics import RocketPhysics
+    physics = RocketPhysics()
 
     print("⏳ Waiting for commands...")
 
     while True:
         if reset_flag:
-            x, y, z = 0.0, 0.0, 0.0
-            vx, vy, vz = 0.0, 0.0, 0.0
+            physics = RocketPhysics() # Reset state
             reset_flag = False
             print("🔄 Simulation Reset.")
 
@@ -73,38 +76,32 @@ def main():
         if current_status in ["IDLE", "READY"]:
             # Just send heartbeat
             dt = 0.5
+            state = physics.update(dt, current_status) # Updates timestamps/idle state
         else:
             dt = 0.5
             mission_time = time.time() - mission_start_time
             
-            # Physics Calculation based on State
+            # Flight Logic (State Transitions)
             if current_status == "ASCENT_BURN":
-                az = 25.0 - 9.81
                 if mission_time > 5.0:
                     current_status = "COASTING"
             elif current_status == "COASTING":
-                az = -9.81 - (0.01 * vz**2)
-                if vz < 0:
-                     # Auto-deploy at apogee (normally), but let's wait for gravity or command
-                     pass
+                if physics.vz < 0 and physics.z > 0:
+                    # Automatic apogee detection (optional, or wait for command)
+                    # For now just let it fall until logic or command changes it
+                    pass
             elif current_status == "DESCENT":
-                 az = -9.81 + (0.05 * vz**2)
-                 if vz > -5: az = -9.81 # Terminal velocity clamp roughly
+                pass
 
-            if current_status in ["ASCENT_BURN", "COASTING", "DESCENT"]:
-                # Integration
-                vz += az * dt
-                z += vz * dt
-                
-                # Drift
-                x += random.uniform(-1, 1)
-                y += random.uniform(-1, 1)
+            # Update Physics
+            state = physics.update(dt, current_status)
 
-            # Ground Check
-            if z < 0:
-                z = 0
-                if current_status not in ["IDLE", "READY"]:
-                    current_status = "LANDED"
+            # Ground Check for Auto-Landing
+            if state["z"] <= 0 and current_status == "DESCENT":
+                 current_status = "LANDED"
+                 
+        x, y, z = state["x"], state["y"], state["z"]
+        vz = state["vz"]
 
         # Coordinates
         lat = LAUNCH_LAT + (y / 111000.0)
