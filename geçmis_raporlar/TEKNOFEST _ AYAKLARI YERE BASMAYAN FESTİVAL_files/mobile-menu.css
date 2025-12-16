@@ -1,0 +1,20 @@
+#__smobileMenuContent__menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+}
+
+#__smobileMenuContent__menu ul {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#__smobileMenuContent__menu ul li a {
+
+}

@@ -1,0 +1,383 @@
+/* Add here all your CSS customizations */
+
+tr.reset-bottom1 p{
+ margin-bottom:0 !important;
+}
+.accordion .card-header{
+ background-color: #285a94 !important;
+}
+.card-header h2 button{
+ color:#fff;
+ font-size:16px;
+ cursor:pointer;
+ display:block;
+}
+.card-header h2 button:focus{
+ color:#fff;
+ font-size:16px;
+ cursor:pointer;
+ display:block;
+ text-decoration: none;
+}
+ .accordion {
+	 max-width: 100%;
+}
+ .accordion .accordion-item .accordion-title {
+	 padding: 10px 20px;
+	 font-size: 16px;
+     font-weight: 700;
+	 background-color: #285a94;
+	 color: #fff;
+	 transition: 0.5s;
+	 cursor: pointer;
+	 position: relative;
+}
+ .accordion .accordion-item .accordion-title:hover {
+	 background-color: #114076;
+}
+ .accordion .accordion-item .accordion-title:after {
+
+	 position: absolute;
+	 color: white;
+	 right: 1rem;
+	 transition: transform 0.5s ease-in;
+}
+ .accordion .accordion-item .accordion-content {
+	 position: relative;
+	 height: 0;
+	 opacity: 0;
+	 overflow: hidden;
+	 overflow-y: hidden;
+	 transition: all 0.5s ease-in;
+	 border-left: 2px solid white;
+	 border-right: 2px solid white;
+	 border-bottom: 2px solid white;
+}
+ .accordion .accordion-item .accordion-content p {
+	 font-weight: 300;
+	 padding: 1rem;
+     font-size: 16px;
+     color: #2c2c2c;
+     line-height: 26px;
+     margin: 0 0 20px;
+}
+ .accordion .accordion-item.active .accordion-title {
+	 background-color: #285a94;
+}
+ .accordion .accordion-item.active .accordion-title:after {
+	 transform: rotate(180deg);
+	 transition: transform 0.5s ease-in;
+}
+ .accordion .accordion-item.active .accordion-content {
+	 height: auto;
+	 border-right: 2px solid #285a94;
+	 border-bottom: 2px solid #285a94;
+	 border-left: 2px solid #285a94;
+	 opacity: 1;
+	 margin-bottom: 1rem;
+	 transition: all 0.5s ease-in;
+}
+ a button.new-solid-btn{
+	 padding:20px;
+	 border:1px solid #fff;
+	 display:flex;
+	 align-items:center;
+	 justify-content: space-between;
+	 background-color:transparent;
+	 width:220px;
+ }
+a button.new-solid-btn .btn-left{
+	text-align: left;
+ }
+a button.new-solid-btn .btn-left h3{
+	text-transform: none;
+	margin:0;
+	 color:#fff;
+	 font-size:32px;
+ }
+a button.new-solid-btn .btn-left p{
+	margin:0;
+	color:#517DB1;
+	 font-size:12px;
+ }
+
+a button.new-solid-btn .btn-right div{
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	width:32px;
+	height: 32px;
+	background-color:#fff;
+ }
+@media (max-width: 767.98px) {
+img.rocket{
+width:30% !important;
+}
+.about-drone-one-media{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+ }
+.countdown-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+            margin: 0;
+    padding:0;
+        }
+.countdown-content .day-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.countdown-content .day .day-content .day-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+
+}
+
+
+.countdown-content .hour .hour-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.countdown-content .hour .hour-content .hour-time{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.countdown-content .hour .hour-content .hour-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+        .day-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px 0 0;
+}
+.day-content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.day-content p{
+    padding: 0 7px;
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 700;
+}
+.day-text{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.day-text p{
+    color: #404040;
+    font-size: 12px;
+    margin:0;
+    font-weight: 300;
+}
+.day-content p#days, p#hours, p#minutes, p#seconds{
+    margin:0;
+}
+@media (max-width: 991.98px) {
+    button.header-btn-collapse-nav{
+        display:none;
+    }
+    .header-nav{
+        display:none;
+    }
+    nav.collapse{
+        display:none;
+
+    }
+    .header-nav{
+        display:none;
+    }
+    .header-column{
+        display:none;
+    }
+    .header-nav-line{
+        display: none !important;
+    }
+
+}
+ul#menu{
+        display:none;
+
+    }
+
+@media (min-width: 991.98px) {
+     button#open_mobile_menu{
+        display:none;
+    }
+    ul#menu{
+        display:none;
+
+    }
+}
+ul.smobilemenu-theme-default{
+    background-color: rgb(40, 90, 148);
+}
+#__smobileMenuContent__menu ul li a{
+    display: block;
+}
+span.days5, .hours5, .minutes5, .seconds5{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+span.days4, .hours4, .minutes4, .seconds4{
+    font-family: 'Rajdhani', sans-serif;
+    padding: 0 7px;
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 700;
+}
+.support-box{
+    border:2px solid #fff;
+    padding:20px;
+    box-shadow: 0px 0px 44px -10px rgb(0 0 0 / 15%);
+    display:flex;
+    justify-content:center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s;
+}
+.support-box:hover{
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+.support-box img{
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 50%;
+}
+.timer{
+    margin: 0 10px 0 0;
+}
+.countdown-content{
+    align-items: center;
+}
+.appear-animation .flip-card .flip-front{
+    height:370px;
+}
+.flip-front .flip-content h4{
+    text-transform: uppercase;
+}
+.flip-back .flip-content h4{
+    text-transform: uppercase;
+}
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled{
+    display: none;
+}
+.video-gallery-one{
+    height:200px;
+}
+.owl-carousel .owl-item img{
+    height:200px;
+}
+.tab-content .card{
+    /** backface-visibility: hidden;
+    background: #FFF;
+    box-shadow: 0px 0px 44px -10px rgb(0 0 0 / 15%);
+    transform-style: preserve-3d;
+    transition: ease transform 500ms;
+     **/
+}
+.tab-content .flip-front .flip-back{
+}
+.bottom-but{
+    margin: 10px 0 0 0;
+    position: absolute;
+    bottom: 3px;
+}
+.bottom-but2{
+    margin: 5px 0;
+    position: absolute;
+    bottom: 15px;
+}
+.tab-pane .new-box-2{
+    background: #FFF;
+    box-shadow: 0px 0px 44px -10px rgb(0 0 0 / 15%);
+    transform-style: preserve-3d;
+    transition: ease transform 500ms;
+    height: 300px;
+    padding:48px;
+    display:flex;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    position:relative
+}
+ .new-box-3{
+    background: #FFF;
+    box-shadow: 0px 0px 44px -10px rgb(0 0 0 / 15%);
+    transform-style: preserve-3d;
+    transition: ease transform 500ms;
+    height: 350px;
+    padding:48px;
+    display:flex;
+    align-items: center;
+    text-align:center;
+    flex-direction: column;
+    position:relative
+}
+.std-font-new{
+    font-family: 'Muli', sans-serif;
+    font-size:16px;
+    color: #777;
+}
+@media (max-width: 767.98px) {
+    .new-box-2 img{
+        width:50%;
+    }
+}

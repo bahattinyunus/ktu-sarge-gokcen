@@ -80,7 +80,7 @@ Her ekibin teknik notları ve tasarımları:
 ### 📊 Yönetim ve Arşiv
 *   [Bütçe ve Finans](docs/management/budget.md)
 *   [Tasarım Notları (Ham)](docs/design_notes/)
-*   [Geçmiş Raporlar](geçmis_raporlar/)
+*   [Geçmiş Raporlar](geçmis_raporlar/) - *(Raporlar takımdaki 11 kişiye 3'erli gruplar halinde paylaştırılmıştır)*
 *   [İç Hesaplamalar](docs/internal/calculations_rationale.md)
 
 ---
