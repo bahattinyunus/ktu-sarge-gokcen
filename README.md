@@ -1,7 +1,4 @@
-﻿﻿1.https://github.com/atalayroket?utm_source=chatgpt.com
-2.https://github.com/koesan/Teknofest_roket_Yer_istasyonu_yazilimi.git
-3.https://github.com/denizetkar/TeknofestFlightSoftware?utm_source=chatgpt.com
-
+﻿﻿
 
 <div align="center">
   <img src="assets/project_banner.png" alt="Gökçen Roket Takımı Banner" width="100%" />
@@ -22,6 +19,24 @@
   **"Göklerdeki istikbalimiz için planlı, disiplinli ve bilimsel çalışma."**
 
 </div>
+
+---
+
+## 📚 Yararlı Kaynaklar (Resources)
+
+| 🇹🇷 Yerli Örnekler | 🌍 Yabancı Kaynaklar |
+| :--- | :--- |
+| • [Atalay Roket](https://github.com/atalayroket)<br>• [Teknofest Yer İstasyonu](https://github.com/koesan/Teknofest_roket_Yer_istasyonu_yazilimi.git)<br>• [Teknofest Flight Software](https://github.com/denizetkar/TeknofestFlightSoftware)<br>• [Yer İstasyonu (Yunus Emre Tom)](https://github.com/yunusemretom/Yer-Istasyonu)<br>• [Atalay Aviyonik](https://github.com/atalayroket/atalay_aviyoniksistem) | • [Rocket Control](https://github.com/intensite/rocketcontrol)<br>• [NASA cFS](https://github.com/nasa/cFS)<br>• [ArduPilot](https://github.com/ArduPilot/ardupilot)<br>• [OpenRocket](https://github.com/openrocket/openrocket)<br>• [Mission Planner](https://github.com/ArduPilot/MissionPlanner)<br>• [PX4 Autopilot](https://github.com/PX4/PX4-Autopilot) |
+
+### 🧠 Önerilen İleri Seviye Kaynaklar (Recommended by AI)
+
+| 🔬 Simülasyon & Analiz | ⚡ Aviyonik & Gömülü Sistemler | 📚 Eğitim & Teori |
+| :--- | :--- | :--- |
+| • **[NASA OpenMCT](https://github.com/nasa/openmct)**<br>_(Görev kontrol arayüzü)_<br>• **[RocketPy](https://github.com/RocketPy-Team/RocketPy)**<br>_(6-DOF yörünge simülasyonu)_<br>• **[RASAero II](http://www.rasaero.com/)**<br>_(Aerodinamik analiz)_<br>• **[OpenRocket](https://openrocket.info/)**<br>_(Standart simülasyon)_ | • **[KiCad](https://www.kicad.org/)**<br>_(PCB Tasarım)_<br>• **[Teensy Rocket](https://github.com/PaulStoffregen/Teensy)**<br>_(Hızlı uçuş bilgisayarları)_<br>• **[ExpressLRS](https://github.com/ExpressLRS/ExpressLRS)**<br>_(Uzun menzil RC)_<br>• **[ArduPilot](https://ardupilot.org/)**<br>_(Otopilot ekosistemi)_ | • **[Nakka Rocketry](https://www.nakka-rocketry.net/)**<br>_(Motor teorisi)_<br>• **[BPS Space](https://www.youtube.com/c/BPSSpace)**<br>_(TVC ve kontrol)_<br>• **[Apogee Rockets](https://www.apogeerockets.com/Education/Newsletter-Archive)**<br>_(Teknik makaleler)_<br>• **[NASA Basics of Space Flight](https://solarsystem.nasa.gov/basics/chapter1-1/)** |
+
+| 📏 Standartlar & El Kitapları | 🧮 Araçlar & Veritabanları | 🛠️ Mekanik & Üretim |
+| :--- | :--- | :--- |
+| • **[NASA Systems Engineering Handbook](https://www.nasa.gov/seh/)**<br>_(Sistem mühendisliği)_<br>• **[ECSS Standards](https://ecss.nl/)**<br>_(Avrupa Uzay Standartları)_<br>• **[FAA Amateur Rocketry](https://www.faa.gov/space/legislation_regulation_guidance)**<br>_(Güvenlik regülasyonları)_ | • **[ThrustCurve.org](https://www.thrustcurve.org/)**<br>_(Motor itki verileri)_<br>• **[Fruity Chutes Calculator](https://fruitychutes.com/help_guide/descent_rate_calculator.htm)**<br>_(Paraşüt/İniş hızı hesabı)_<br>• **[BurnSim](http://www.burnsim.com/)**<br>_(İç balistik tasarımı)_ | • **[Make It From](https://www.makeitfrom.com/)**<br>_(Malzeme özellikleri veritabanı)_<br>• **[NASA Spinoffs](https://spinoff.nasa.gov/)**<br>_(Teknoloji transferi örnekleri)_<br>• **[GrabCAD Rocketry](https://grabcad.com/library?page=1&time=all_time&sort=popular&query=rocketry)**<br>_(3D Model referansları)_ |
 
 ---
 
