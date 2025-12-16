@@ -1,37 +1,37 @@
 # 🪂 Kurtarma Sistemi (Recovery)
 
 ## 🎯 Hedefler
-- Roketin hasarsız bir şekilde yere inmesini sağlamak.
-- İniş hızını güvenlik sınırları (< 8 m/s) altında tutmak.
+- Roketi hasarsız bir şekilde yere indirmek.
+- İniş hızı < 9 m/s (Hasarsız iniş için).
+- Çift Kademeli Kurtarma (Dual Deployment) uygulamak.
 
-## ⚙️ Tasarım
-Çift kademeli kurtarma sistemi kullanılacaktır.
+## 🔄 Çalışma Prensibi: Dual Deployment
+Yüksek irtifadan (10.000 ft) direkt ana paraşüt açılırsa rüzgar ile roket kilometrelerce uzağa sürüklenebilir. Bu yüzden iki aşamalı sistem kullanılır.
 
-### 1. Sürüklenme Paraşütü (Drogue)
-*   **Açılma İrtifası:** Tepe Noktası (Apogee)
-*   **Amaç:** Roketi stabilize etmek ve sürüklenmeyi önlemek için hızlı iniş (20-30 m/s) sağlamak.
-*   **Çap:** 60 - 90 cm
+### 1. Aşama: Tepe Noktası (Apogee) - Sürüklenme Paraşütü
+*   **Olay:** Roket tepe noktasına ulaştığında (hız ~0), aviyonik sistem barut hakkını ateşler.
+*   **Eylem:** Roket ikiye ayrılır ve küçük bir **Sürüklenme Paraşütü (Drogue)** açılır.
+*   **Amaç:** Roketin serbest düşüşünü stabilize etmek ama hızlı inmesini sağlamak (~20-25 m/s). Sürüklenmeyi minimize eder.
 
-### 2. Ana Paraşüt (Main)
-*   **Açılma İrtifası:** 600 metre (AGL)
-*   **Amaç:** Güvenli iniş hızı (< 8 m/s) sağlamak.
-*   **Çap:** 250 - 300 cm
+### 2. Aşama: Belirlenen İrtifa (Main) - Ana Paraşüt
+*   **Olay:** Roket 600m (veya 500m) irtifaya indiğinde ikinci barut hakkı ateşlenir.
+*   **Eylem:** **Ana Paraşüt (Main Parachute)** açılır.
+*   **Amaç:** İniş hızını güvenli seviyeye (< 9 m/s) düşürmek.
 
-## 🧨 Ayrılma Mekanizması
-*   **Barut:** Kara Barut (Black Powder) kullanılacaktır.
-*   **Hesaplama:** `Gram = (Basınç * Hacim) / Sabit` (Şarbon testi ile doğrulanmalıdır).
-*   **Yedekleme:** Her kademe için iki ayrı ateşleyici (Primary & Backup) kullanılacaktır.
+## 🧮 Paraşüt Boyutlandırma
+İniş hızı hesabı için **Sürükleme Denklemi (Drag Equation)** kullanılır:
 
-### 🔥 Kara Barut Hesaplayıcı (Referans)
-*Hedef Basınç: 10-15 psi önerilir.*
+$$ V = \sqrt{\frac{2 \cdot m \cdot g}{\rho \cdot C_d \cdot A}} $$
 
-| Hazne Çapı (mm) | Hazne Boyu (mm) | Hacim (cm³) | Gerekli Barut (g) @ 12psi |
-| :--- | :--- | :--- | :--- |
-| 100 | 300 | ~2350 | **~1.5g** |
-| 100 | 400 | ~3140 | **~2.0g** |
-| 100 | 500 | ~3920 | **~2.5g** |
+*   $V$: İniş hızı (m/s)
+*   $m$: Roketin toplam iniş kütlesi (kg)
+*   $g$: Yerçekimi (9.81 m/s²)
+*   $\rho$: Hava yoğunluğu (~1.225 kg/m³)
+*   $C_d$: Sürükleme katsayısı (Genellikle 1.5 veya 2.2 - üreticiye bağlı)
+*   $A$: Paraşüt alanı (m²)
 
-⚠️ **UYARI:**
-1.  Asla 4F (FFFF) baruttan daha ince barut kullanmayın.
-2.  Yer testleri (Ground Test) yapmadan uçuşa gitmeyin.
-3.  Barutları nemden koruyun.
+> [!WARNING]
+> Şok kordonu (Shock Cord) uzunluğu gövde boyunun en az 3-4 katı olmalıdır ki paraşüt açıldığında gövde birbiriyle çarpışmasın. Genellikle Kevlar veya Tubular Nylon kullanılır.
+
+## 🧪 Testler
+*   **Ejection Charge Test (Yer Testi):** Barut miktarının gövdeyi ayırmaya yetip yetmediği yerde test edilmelidir.

@@ -9,7 +9,7 @@
 
   [![](https://img.shields.io/badge/Teknofest-2026-red?style=for-the-badge&logo=rocket)](https://teknofest.org/tr/)
   [![](https://img.shields.io/github/actions/workflow/status/bahattinyunus/teknofest-rocket-2026/lint.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
-  [![](https://img.shields.io/badge/Durum-Planlama-blue?style=for-the-badge)](https://teknofest.org/tr/)
+  [![](https://img.shields.io/badge/Durum-Aktif%20Geliştirme-blue?style=for-the-badge)](https://teknofest.org/tr/)
   [![](https://img.shields.io/badge/Lisans-MIT-green?style=for-the-badge)](LICENSE)
 
   <br>
@@ -31,23 +31,24 @@
 
 ---
 
-## �️ Kullanılan Teknolojiler ve Araçlar
+## 🛠️ Kullanılan Teknolojiler ve Araçlar
 <div align="center">
 
 ![OpenRocket](https://img.shields.io/badge/OpenRocket-Design-blue?style=for-the-badge&logo=rocket)
 ![Ansys](https://img.shields.io/badge/Ansys-CFD-yellow?style=for-the-badge&logo=ansys)
-![SolidWorks](https://img.shields.io/badge/SolidWorks-CAD-red?style=for-the-badge&logo=dassaul)
+![SolidWorks](https://img.shields.io/badge/SolidWorks-CAD-red?style=for-the-badge&logo=dassaultsystèmes)
 ![STM32](https://img.shields.io/badge/STM32-Avionics-green?style=for-the-badge&logo=stmicroelectronics)
 ![Python](https://img.shields.io/badge/Python-Scripting-blue?style=for-the-badge&logo=python)
 ![Excel](https://img.shields.io/badge/Excel-Data-success?style=for-the-badge&logo=microsoft-excel)
+![GitHub](https://img.shields.io/badge/GitHub-Collaboration-181717?style=for-the-badge&logo=github)
 
 </div>
 
 ---
 
-## �📌 Depo Amacı
+## 📌 Depo Amacı
 Bu repository, **KTÜ Gökçen Roket Takımı**'nın 2026 Teknofest Yarışması sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındırır.
-**Bu depoda aktif yazılım kodu bulunmamaktadır.** Yazılım geliştirme süreçleri ayrı repolarda yürütülmektedir.
+Burası takımın **hafızasıdır**. Her teknik karar, her analiz sonucu ve her önemli belge burada saklanır.
 
 ---
 
@@ -63,30 +64,23 @@ Takımımız **Yüksek İrtifa (High Altitude)** kategorisinde yarışmaktadır.
 
 ### 📝 Değerlendirme Süreci
 Yarışma süreci 4 temel rapordan oluşur. Her aşama elemeli sistemdir:
-1.  **KTR (Kavramsal Tasarım Raporu):** Projenin yapılabilirliği, takım yapısı ve literatür taraması puanlanır.
-2.  **ÖTR (Ön Tasarım Raporu):** Matematiksel analizler, CFD simülasyonları ve detaylı CAD çizimleri istenir.
-3.  **KTR (Kritik Tasarım Raporu):** Üretim planı, entegrasyon adımları ve nihai uçuş simülasyonları sunulur.
-4.  **AHR (Atış Hazırlık Raporu):** Montajı tamamlanmış roketin test sonuçları ve uçuşa elverişlilik kanıtları sunulur.
+
+```mermaid
+timeline
+    title Teknofest 2026 Süreci
+    2026 Ocak : Takım Kurulumu : Literatür Taraması
+    2026 Şubat : KTR (Kavramsal Tasarım) : Ön Analizler
+    2026 Nisan : ÖTR (Ön Tasarım) : Detaylı CAD : CFD Analizleri
+    2026 Haziran : KTR (Kritik Tasarım) : İmalat Planı : Uçuş Simülasyonu
+    2026 Ağustos : AHR (Atış Hazırlık) : Montaj & Entegrasyon (AIT)
+    2026 Eylül : TEKNOFEST FİNAL 🚀
+```
 
 ### 🎯 Puanlama Kriterleri
 *   **Raporlar:** %40 (Mühendislik hesapları ve dokümantasyon kalitesi).
 *   **Atış ve Kurtarma:** %40 (Roketin sağlıklı şekilde tepe noktasına ulaşması ve paraşütlerin açılması).
 *   **Faydalı Yük:** %10 (Görevin başarıyla icra edilmesi).
 *   **Özgünlük:** %10 (Yerli tasarım ve inovatif çözümler).
-
----
-
-## 📅 Çalışma Takvimi
-Takım yönetim planına göre ana kilometre taşları:
-
-| Dönem | Faaliyet | Durum |
-| :--- | :--- | :--- |
-| **Ocak 2026** | Takım Kurulumu ve Literatür Taraması | ✅ Tamamlandı |
-| **Şubat 2026** | Kavramsal Tasarım Raporu (KTR) Hazırlığı | 🟡 Devam Ediyor |
-| **Nisan 2026** | Ön Tasarım Raporu (ÖTR) Teslimi | 🔴 Bekleniyor |
-| **Haziran 2026** | Kritik Tasarım Raporu (KTR) Teslimi | 🔴 Bekleniyor |
-| **Ağustos 2026** | Montaj ve Entegrasyon (AIT) | 🔴 Bekleniyor |
-| **Eylül 2026** | *TEKNOFEST FİNAL* 🚀 | 🔴 Bekleniyor |
 
 ---
 
@@ -99,7 +93,7 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 ├── 📂 docs                # 🧠 Tüm teknik dokümanlar
 │   ├── 📂 education       # 🎓 Eğitim materyalleri (Rocketry 101)
 │   ├── 📂 internal        # 🧮 İç hesaplamalar ve notlar
-│   ├── 📂 operations      # 📋 Operasyonel kontrol listeleri
+│   ├── 📂 operations      # 📋 Operasyonel kontrol listeleri (Checklists)
 │   ├── 📂 management      # 📅 Bütçe, takvim ve toplantı notları
 │   ├── 📂 templates       # 📄 Rapor şablonları (ÖTR, KTR)
 │   └── 📂 subsystems      # 🛠️ Alt sistem tasarımları
@@ -110,17 +104,17 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 └── 📜 README.md           # Ana proje dosyası
 ```
 
-### � Operasyonlar (Safety First)
-*   [Uçuş Öncesi Kontrol Listesi (Pre-Flight)](docs/operations/checklist_preflight.md)
-*   [Montaj Kontrol Listesi (Assembly)](docs/operations/checklist_assembly.md)
+### 📋 Operasyonlar (Safety First)
+*   [🚀 Fırlatma Günü Prosedürleri (Launch Day)](docs/operations/checklist_launch.md)
+*   [⚠️ Güvenlik Prosedürleri](docs/operations/safety_procedures.md)
+*   [🛠️ Montaj Kontrol Listesi](docs/operations/checklist_assembly.md)
 
 ### 🛠️ Alt Sistemler
-*   [Aerodinamik & Yapısal](docs/subsystems/aerodynamics.md)
-*   [Aviyonik & Yazılım](docs/subsystems/avionics.md)
-*   [Yapısal & Mekanik](docs/subsystems/structure.md)
-*   [İtki Sistemi (Propulsion)](docs/subsystems/propulsion.md)
-*   [Kurtarma Sistemi (Recovery)](docs/subsystems/recovery.md)
-*   [Faydalı Yük (Payload)](docs/subsystems/payload.md)
+*   [🔥 İtki Sistemi (Propulsion)](docs/subsystems/propulsion.md)
+*   [⚡ Aviyonik & Yazılım](docs/subsystems/avionics.md)
+*   [🏗️ Yapısal & Mekanik](docs/subsystems/structure.md)
+*   [🪂 Kurtarma Sistemi (Recovery)](docs/subsystems/recovery.md)
+*   [📦 Faydalı Yük (Payload)](docs/subsystems/payload.md)
 
 ### 📊 Yönetim ve Arşiv
 *   [Bütçe Takibi](docs/management/budget.md)

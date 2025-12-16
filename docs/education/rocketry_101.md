@@ -1,31 +1,38 @@
-# 🚀 Rocketry 101: Temel Kavramlar
+# 🚀 Rocketry 101: Temel Kavramlar & Derin Dalış
 
-Bu rehber, roketçiliğe yeni başlayanlar için temel terimleri ve kavramları açıklar.
+Bu rehber, roketçiliğe yeni başlayanlar için temel terimleri, ileri seviye için ise aerodinamik detayları içerir.
 
 ## 1. Roket Bileşenleri
-*   **Burun Konisi (Nose Cone):** Roketin en ucunda bulunur, aerodinamik sürtünmeyi azaltır.
-*   **Gövde Borusu (Body Tube):** Roketin ana gövdesidir, motor ve faydalı yükü taşır.
-*   **Kanatçıklar (Fins):** Roketin uçuşu sırasında dengede kalmasını sağlar. Genellikle 3 veya 4 adettir.
-*   **Motor Kundağı (Motor Mount):** Roket motorunu gövde içinde sabitler.
-*   **Paraşüt (Recovery System):** Roketin güvenli bir şekilde yere inmesini sağlar.
+*   **Burun Konisi (Nose Cone):** Roketin en ucunda bulunur. Ses altı hızlarda *Ogive* veya *Parabolik*, ses üstü hızlarda *Von Karman* profili tercih edilir.
+*   **Gövde Borusu (Body Tube):** Roketin omurgasıdır. L/D (Uzunluk/Çap) oranı 10-20 arasında olması idealdir.
+*   **Kanatçıklar (Fins):** Roketin "tüyleri"dir. Statik stabiliteyi sağlayan ana unsurdur.
+*   **Motor Kundağı (Motor Mount):** İtkiyi gövdeye ileten yapıdır.
 
-## 2. Stabilite (Denge) Kavramları
-Roketin düz uçabilmesi için stabil olması gerekir.
+## 2. Stabilite: Roket Neden Düz Gider? (Rocket Physics Deep Dive)
 
-*   **CP (Center of Pressure - Basınç Merkezi):** Aerodinamik kuvvetlerin etki ettiği noktadır. Genellikle geometrik merkezdir.
-*   **CG (Center of Gravity - Ağırlık Merkezi):** Roketin kütle merkezidir. Dolu motorla en arkada, boş motorla öne doğru kayar.
-*   **Statik Marjin (Static Margin):** CP ve CG arasındaki mesafenin roket çapına oranıdır.
-    *   **Formül:** $SM = \frac{CP - CG}{D}$
-    *   **İdeal Değer:** 1.5 - 2.5 cal arasıdır.
-    *   ⚠️ **Kural:** CG daima CP'nin **önünde** (burun tarafında) olmalıdır!
+### Basınç Merkezi (Center of Pressure - $CP$) Hesaplaması
+Barrowman denklemlerine göre kanatçıkların CP üzerindeki etkisi en büyüktür.
+*   Kanatçık alanı arttıkça CP geriye gider (Stabilite artar).
+*   Burun konisi uzadıkça CP öne gelir (Stabilite azalır).
 
-## 3. Uçuş Aşamaları (Flight Profile)
-1.  **Ateşleme (Lift-off):** Motor çalışır ve roket rampadan ayrılır.
-2.  **Yanma Sonu (Burnout):** Motor yakıtı biter, roket eylemsizlikle yükselmeye devam eder.
-3.  **Tepe Noktası (Apogee):** Roketin ulaştığı en yüksek irtifa. Hız sıfırdır. Paraşüt burada açılır.
-4.  **İniş (Descent):** Paraşütle süzülerek yere iniş.
-5.  **Kurtarma (Recovery):** Roketin bulunması ve verilerin alınması.
+### Ağırlık Merkezi (Center of Gravity - $CG$)
+Uçuş sırasında yakıt yandıkça motor hafifler ve $CG$ **öne** (buruna doğru) kayar. Bu, uçuşun sonlarına doğru stabilitenin artması (over-stable) demektir.
+> [!NOTE]
+> *Hava Durumu Etkisi (Weather Cocking):* Çok stabil roketler (>3 cal) rüzgara karşı dönme eğilimindedir. Bu yüzden aşırı stabilite de istenmez.
 
-## 4. Kaynaklar
-*   **OpenRocket:** Ücretsiz tasarım simülasyon programı. [İndir](https://openrocket.info/)
-*   **TEKNOFEST:** Yarışma şartnameleri ve duyuruları. [Web Sitesi](https://teknofest.org/tr/)
+## 3. Sürükleme (Drag) Kuvveti
+Roketi yavaşlatan ana düşman: Hava direnci.
+$$ F_d = \frac{1}{2} \rho v^2 C_d A $$
+*   **Basınç Sürüklemesi (Pressure Drag):** Roketin ön ve arka yüzeyindeki basınç farkı. (Boat-tail azalatır).
+*   **Sürtünme Sürüklemesi (Friction Drag):** Hava moleküllerinin yüzeye sürtünmesi. (Pürüzsüz boya azaltır).
+*   **Taban Sürüklemesi (Base Drag):** Roketin arkasındaki vakum etkisi.
+
+## 4. Uçuş Aşamaları (Flight Profile)
+1.  **Ateşleme (Lift-off):** $T/W > 5$ (İtki/Ağırlık oranı 5'ten büyük olmalı).
+2.  **Yanma Sonu (Burnout):** Maksimum hıza (Max-Q) ulaşılan nokta.
+3.  **Tepe Noktası (Apogee):** Potansiyel enerjinin maksimum olduğu an.
+4.  **Kurtarma:** Paraşüt açılması.
+
+## 📚 Kaynaklar
+*   **NASA Rocketry Guide:** [Link](https://www.grc.nasa.gov/www/k-12/rocket/)
+*   **OpenRocket:** [İndir](https://openrocket.info/)
