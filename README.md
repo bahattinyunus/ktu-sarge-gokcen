@@ -17,6 +17,17 @@
 
 ---
 
+> [!IMPORTANT]
+> **📢 Takım Duyurusu ve Görevlendirme**
+>
+> 1.  **Erişim:** Repo üzerinde çalışmak isteyenler kullanıcı adlarını ileterek "Collaborator" olabilir veya doğrudan PR (Pull Request) açabilirler.
+> 2.  **Rapor Analizi:** `geçmis_raporlar` klasöründe dosyalar "1. kişi", "2. kişi" şeklinde gruplandırılmıştır.
+>     *   **Görev:** Bir klasör seçin ve adını **kendi adınızla (Ad_Soyad)** değiştirin.
+>     *   İçindeki 3 raporu inceleyip önemli noktaları ve analizlerinizi not alın.
+>     *   Herkese kolay gelsin! 🚀
+
+---
+
 ## 📌 Depo Amacı
 Bu repository, **KTÜ Gökçen Roket Takımı**'nın 2026 Teknofest Yarışması sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındırır.
 **Bu depoda aktif yazılım kodu bulunmamaktadır.** Yazılım geliştirme süreçleri ayrı repolarda yürütülmektedir.
@@ -49,7 +60,7 @@ Yarışma süreci 4 temel rapordan oluşur. Her aşama elemeli sistemdir:
 ---
 
 ## 📅 Çalışma Takvimi
-Takım yönetim planına gör ana kilometre taşları:
+Takım yönetim planına göre ana kilometre taşları:
 
 | Dönem | Faaliyet | Durum |
 | :--- | :--- | :--- |
