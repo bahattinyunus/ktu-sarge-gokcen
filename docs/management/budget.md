@@ -1,23 +1,21 @@
-# Proje Bütçe Takibi
+# 💰 Bütçe ve Finans Takibi
 
-Takım sponsorluk ve harcama durumu.
+## 📊 Genel Durum
+| Kalem | Tahmini Bütçe (TL) | Harcanan (TL) | Kalan (TL) |
+| :--- | :--- | :--- | :--- |
+| Yapısal | 15.000 | 0 | 15.000 |
+| Aviyonik | 8.000 | 0 | 8.000 |
+| İtki (Motor) | 12.000 | 0 | 12.000 |
+| Kurtarma | 5.000 | 0 | 5.000 |
+| Lojistik | 3.000 | 0 | 3.000 |
+| **TOPLAM** | **43.000 TL** | **0 TL** | **43.000 TL** |
 
-## 💰 Gelirler
-| Kaynak | Tutar (TL) | Durum |
-| :--- | :--- | :--- |
-| Üniversite Desteği | 50.000 | ✅ Onaylandı |
-| Sponsor A | 20.000 | 🟡 Görüşülüyor |
-| Sponsor B | 10.000 | 🔴 Reddedildi |
+## 🧾 Harcama Listesi
+| Tarih | Malzeme | Kategori | Fiyat (TL) | Fatura No |
+| :--- | :--- | :--- | :--- | :--- |
+| 01.01.2026 | Örnek Fiberglas | Yapısal | 500 | ABC-123 |
+| | | | | |
 
-## 💸 Gider Tahmini
-| Kalem | Tutar (TL) | Öncelik |
-| :--- | :--- | :--- |
-| Kompozit Gövde Üretimi | 30.000 | Yüksek |
-| Roket Motoru (Yakıt) | 15.000 | Yüksek |
-| Elektronik Komponentler | 10.000 | Orta |
-| Lojistik & Konaklama | 20.000 | Düşük |
-
-## 📉 Genel Durum
-**Toplam Bütçe:** 50.000 TL
-**Tahmini Gider:** 75.000 TL
-**Açık:** -25.000 TL (Sponsor bulunmalı!)
+## 💡 Sponsorlar
+*   **Ana Sponsor:** [Görüşülüyor]
+*   **Malzeme Sponsoru:** [Görüşülüyor]
