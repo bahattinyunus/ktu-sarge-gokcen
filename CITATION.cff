@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this repository's documentation or designs, please cite it using these metadata."
+title: "KTÜ Gökçen Roket Takımı - Teknofest 2026 Docs"
+abstract: "Documentation and planning repository for KTÜ Gökçen Rocket Team competing in Teknofest 2026 High Altitude Category."
+authors:
+  - family-names: "Gökçen"
+    given-names: "Roket Takımı"
+    affiliation: "Karadeniz Technical University"
+version: "1.0.0"
+date-released: 2025-12-16
+license: "MIT"
+repository-code: "https://github.com/bahattinyunus/teknofest-rocket-2026"
+keywords:
+  - rocketry
+  - teknofest
+  - high-altitude
+  - aerospace
