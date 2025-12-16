@@ -99,9 +99,10 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 ├── 📂 docs                # 🧠 Tüm teknik dokümanlar
 │   ├── 📂 education       # 🎓 Eğitim materyalleri (Rocketry 101)
 │   ├── 📂 internal        # 🧮 İç hesaplamalar ve notlar
+│   ├── 📂 operations      # 📋 Operasyonel kontrol listeleri
 │   ├── 📂 management      # 📅 Bütçe, takvim ve toplantı notları
 │   ├── 📂 templates       # 📄 Rapor şablonları (ÖTR, KTR)
-│   └── 📂 subsystems      # 🛠️ Alt sistem tasarımları (Aviyonik, Aerodinamik)
+│   └── 📂 subsystems      # 🛠️ Alt sistem tasarımları
 ├── 📂 geçmis_raporlar     # 📚 Analiz edilen eski raporlar
 ├── 📂 logs                # 📡 Telemetri ve uçuş logları
 ├── 📜 CITATION.cff        # Akademik atıf dosyası
@@ -109,22 +110,22 @@ Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
 └── 📜 README.md           # Ana proje dosyası
 ```
 
-### 📄 Rapor Şablonları
-Yarışma isterlerine uygun taslaklar:
-*   [Kavramsal Tasarım Raporu (KTR) Taslağı](docs/templates/KTR_Sablonu.md)
-*   [Ön Tasarım Raporu (ÖTR) Taslağı](docs/templates/OTR_Sablonu.md)
+### � Operasyonlar (Safety First)
+*   [Uçuş Öncesi Kontrol Listesi (Pre-Flight)](docs/operations/checklist_preflight.md)
+*   [Montaj Kontrol Listesi (Assembly)](docs/operations/checklist_assembly.md)
 
-### 🛠️ Alt Sistemler (Workspaces)
-Her ekibin teknik notları ve tasarımları:
+### 🛠️ Alt Sistemler
 *   [Aerodinamik & Yapısal](docs/subsystems/aerodynamics.md)
 *   [Aviyonik & Yazılım](docs/subsystems/avionics.md)
-*   *Diğer alt sistemler `docs/subsystems/` altında oluşturulacaktır.*
+*   [Yapısal & Mekanik](docs/subsystems/structure.md)
+*   [İtki Sistemi (Propulsion)](docs/subsystems/propulsion.md)
+*   [Kurtarma Sistemi (Recovery)](docs/subsystems/recovery.md)
+*   [Faydalı Yük (Payload)](docs/subsystems/payload.md)
 
 ### 📊 Yönetim ve Arşiv
-*   [Bütçe ve Finans](docs/management/budget.md)
-*   [Tasarım Notları (Ham)](docs/design_notes/)
-*   [Geçmiş Raporlar](geçmis_raporlar/) - *(Raporlar takımdaki 11 kişiye 3'erli gruplar halinde paylaştırılmıştır)*
-*   [İç Hesaplamalar](docs/internal/calculations_rationale.md)
+*   [Bütçe Takibi](docs/management/budget.md)
+*   [Toplantı Tutanağı Şablonu](docs/management/meeting_notes_template.md)
+*   [Geçmiş Raporlar](geçmis_raporlar/)
 
 ---
 
