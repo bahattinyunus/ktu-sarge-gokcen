@@ -1,4 +1,9 @@
-﻿﻿<div align="center">
+﻿﻿1.https://github.com/atalayroket?utm_source=chatgpt.com
+2.https://github.com/koesan/Teknofest_roket_Yer_istasyonu_yazilimi.git
+3.https://github.com/denizetkar/TeknofestFlightSoftware?utm_source=chatgpt.com
+
+
+<div align="center">
   <img src="assets/project_banner.png" alt="Gökçen Roket Takımı Banner" width="100%" />
   <br><br>
   <img src="assets/university_logo.png" alt="University Logo" width="80" />
