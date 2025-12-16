@@ -31,7 +31,21 @@
 
 ---
 
-## 📌 Depo Amacı
+## �️ Kullanılan Teknolojiler ve Araçlar
+<div align="center">
+
+![OpenRocket](https://img.shields.io/badge/OpenRocket-Design-blue?style=for-the-badge&logo=rocket)
+![Ansys](https://img.shields.io/badge/Ansys-CFD-yellow?style=for-the-badge&logo=ansys)
+![SolidWorks](https://img.shields.io/badge/SolidWorks-CAD-red?style=for-the-badge&logo=dassaul)
+![STM32](https://img.shields.io/badge/STM32-Avionics-green?style=for-the-badge&logo=stmicroelectronics)
+![Python](https://img.shields.io/badge/Python-Scripting-blue?style=for-the-badge&logo=python)
+![Excel](https://img.shields.io/badge/Excel-Data-success?style=for-the-badge&logo=microsoft-excel)
+
+</div>
+
+---
+
+## �📌 Depo Amacı
 Bu repository, **KTÜ Gökçen Roket Takımı**'nın 2026 Teknofest Yarışması sürecindeki **tasarım, analiz, raporlama ve yönetim** belgelerini barındırır.
 **Bu depoda aktif yazılım kodu bulunmamaktadır.** Yazılım geliştirme süreçleri ayrı repolarda yürütülmektedir.
 
@@ -78,7 +92,22 @@ Takım yönetim planına göre ana kilometre taşları:
 
 ## 📂 Dokümantasyon Yapısı
 
-Tüm teknik ve idari belgeler `docs/` klasörü altındadır. Teknofest standartlarına uygun olarak kategorize edilmiştir:
+Tüm teknik ve idari belgeler standartlara uygun olarak düzenlenmiştir:
+
+```plaintext
+├── 📂 assets              # Görseller, bannerlar ve logolar
+├── 📂 docs                # 🧠 Tüm teknik dokümanlar
+│   ├── 📂 education       # 🎓 Eğitim materyalleri (Rocketry 101)
+│   ├── 📂 internal        # 🧮 İç hesaplamalar ve notlar
+│   ├── 📂 management      # 📅 Bütçe, takvim ve toplantı notları
+│   ├── 📂 templates       # 📄 Rapor şablonları (ÖTR, KTR)
+│   └── 📂 subsystems      # 🛠️ Alt sistem tasarımları (Aviyonik, Aerodinamik)
+├── 📂 geçmis_raporlar     # 📚 Analiz edilen eski raporlar
+├── 📂 logs                # 📡 Telemetri ve uçuş logları
+├── 📜 CITATION.cff        # Akademik atıf dosyası
+├── 📜 SECURITY.md         # Güvenlik politikası
+└── 📜 README.md           # Ana proje dosyası
+```
 
 ### 📄 Rapor Şablonları
 Yarışma isterlerine uygun taslaklar:
