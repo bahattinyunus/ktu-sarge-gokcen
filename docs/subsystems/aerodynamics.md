@@ -19,3 +19,19 @@
 
 ## 📁 Dosyalar
 *OpenRocket (.ork) dosyaları buraya eklenecek.*
+
+---
+
+## 🧮 Stabilite Hesaplamaları
+Roketin güvenli uçuşu için **Statik Marjin ($SM$)** hesabı kritiktir.
+
+$$ SM = \frac{CP - CG}{D} $$
+
+*   **CP:** Basınç Merkezi (OpenRocket hesaplar)
+*   **CG:** Ağırlık Merkezi (Simülasyon veya tartılarak bulunur)
+*   **D:** Roket Çapı
+
+### OpenRocket İpuçları
+*   **Ctrl + Z:** Geri Al
+*   **Space:** 3D Görünümde roketin yönünü sıfırla.
+*   **Simülasyon:** Her değişiklikten sonra "Run Simulation" demeyi unutma.

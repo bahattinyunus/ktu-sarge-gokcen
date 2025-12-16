@@ -20,5 +20,20 @@
 ## 📦 Malzeme Listesi (BOM)
 - STM32F407VG Discovery
 - Ebyte E32 433T20D LoRa
-- BMP388 Barometre
-- BNO055 IMU
+- BMP388 Barometre (Yüksek hassasiyetli irtifa ölçümü)
+- BNO055 IMU (Euler açılarını direkt verir, filtre gerektirmez)
+
+---
+
+## 🎓 Yeni Başlayanlar İçin Aviyonik
+Aviyonik, roketin "elektronik beyni"dir.
+
+### Temel Bileşenler
+1.  **Uçuş Bilgisayarı (Flight Computer):** Sensör verilerini işler ve paraşütü tetikler. (Örn: STM32, Arduino, Teensy).
+2.  **IMU (Inertial Measurement Unit):** İvmeölçer ve Jiroskop içerir. Roketin yönelimini ölçer.
+3.  **Barometre:** Basınç değişimi ile irtifayı ölçer.
+4.  **GPS:** Roketin düştüğü yeri bulmak için koordinat verir.
+
+### Kaynaklar
+*   [r/Rocketry Avionics Guide](https://www.reddit.com/r/rocketry/)
+*   [ArduPilot](https://ardupilot.org/) (İleri seviye otopilot)
