@@ -35,3 +35,22 @@ $$ SM = \frac{CP - CG}{D} $$
 *   **Ctrl + Z:** Geri Al
 *   **Space:** 3D Görünümde roketin yönünü sıfırla.
 *   **Simülasyon:** Her değişiklikten sonra "Run Simulation" demeyi unutma.
+
+---
+
+## 🌪️ Fin Flutter Analizi (Aeroelastik)
+Yüksek hızlarda (Mach > 0.6) kanatçıkların titremesini (flutter) önlemek hayati önem taşır.
+
+| Parametre | Formül / Değer | Kritik Sınır |
+| :--- | :--- | :--- |
+| **Shear Modulus (G)** | Malzemeye bağlı (Fiberglas: ~3-5 GPa) | - |
+| **Kanat Kalınlığı (t)** | > 3mm önerilir | < 2mm Riskli |
+| **Flutter Hızı ($V_f$)** | $V_f = \sqrt{\frac{G}{\dots}}$ (OpenRocket hesaplar) | $V_{max} < V_f$ olmalı |
+
+## 📉 Simülasyon Sonuç Şablonu (Raporlar İçin)
+Her uçuş simülasyonu için bu tablo doldurulmalıdır:
+
+| Rüzgar Hızı | Rüzgar Yönü | Rod Çıkış Hızı | Apogee (ft) | Max Hız (Mach) | Stabilite (cal) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 0 m/s | - | 32 m/s | 10.200 | 0.75 | 2.10 |
+| 5 m/s | Batı | 31 m/s | 10.150 | 0.74 | 2.05 |

@@ -37,3 +37,31 @@ Aviyonik, roketin "elektronik beyni"dir.
 ### Kaynaklar
 *   [r/Rocketry Avionics Guide](https://www.reddit.com/r/rocketry/)
 *   [ArduPilot](https://ardupilot.org/) (İleri seviye otopilot)
+
+---
+
+## ⚡ Bağlantı Şeması (Wiring Diagram)
+
+```mermaid
+graph TD
+    Bat[Lipo Pil 2S/3S] -->|Voltaj Regülatörü| PDB[Güç Dağıtım Kartı]
+    PDB -->|3.3V| MCU[STM32F4 Ana İşlemci]
+    
+    subgraph SENSÖRLER
+        BMP[BMP388 Barometre] -->|I2C| MCU
+        IMU[BNO055 IMU] -->|I2C/UART| MCU
+        GPS[NEO-6M GPS] -->|UART| MCU
+    end
+    
+    subgraph İLETİŞİM
+        MCU -->|UART/SPI| LoRa[Ebyte E32 LoRa]
+        LoRa -.->|433 MHz| Yer[Yer İstasyonu]
+    end
+    
+    subgraph KURTARMA
+        MCU -->|GPIO| Mosfet1[Ana Paraşüt Mosfet]
+        MCU -->|GPIO| Mosfet2[Sürüklenme Mosfet]
+        Mosfet1 -->|12V| EMatch1[Ateşleyici 1]
+        Mosfet2 -->|12V| EMatch2[Ateşleyici 2]
+    end
+```
