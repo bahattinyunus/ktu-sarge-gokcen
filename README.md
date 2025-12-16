@@ -8,6 +8,7 @@
   ### Karadeniz Teknik Üniversitesi - Gökçen Roket Takımı
 
   [![](https://img.shields.io/badge/Teknofest-2026-red?style=for-the-badge&logo=rocket)](https://teknofest.org/tr/)
+  [![](https://img.shields.io/github/actions/workflow/status/bahattinyunus/teknofest-rocket-2026/lint.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/bahattinyunus/teknofest-rocket-2026/actions)
   [![](https://img.shields.io/badge/Durum-Planlama-blue?style=for-the-badge)](https://teknofest.org/tr/)
   [![](https://img.shields.io/badge/Lisans-MIT-green?style=for-the-badge)](LICENSE)
 

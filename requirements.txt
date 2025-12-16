@@ -1,0 +1,13 @@
+# Development Tools
+pre-commit
+markdownlint-cli2
+
+# Documentation
+mkdocs
+mkdocs-material
+
+# Scientific Computing (Future Use)
+numpy
+matplotlib
+pandas
+scipy
