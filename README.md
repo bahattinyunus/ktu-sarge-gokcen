@@ -1,6 +1,8 @@
 ﻿﻿<div align="center">
-  <img src="assets/university_logo.png" alt="University Logo" width="120" />
-  <img src="assets/teknofest_logo.png" alt="Teknofest Logo" width="120" />
+  <img src="assets/project_banner.png" alt="Gökçen Roket Takımı Banner" width="100%" />
+  <br><br>
+  <img src="assets/university_logo.png" alt="University Logo" width="80" />
+  <img src="assets/teknofest_logo.png" alt="Teknofest Logo" width="80" />
 
   # 📋 Teknofest 2026 Roket Takımı - Planlama ve Arşiv
   ### Karadeniz Teknik Üniversitesi - Gökçen Roket Takımı
